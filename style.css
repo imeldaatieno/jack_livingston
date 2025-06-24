@@ -1,19 +1,27 @@
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f9fafb;
-    color: #333;
     margin: 0;
     padding: 0;
+    background: url('studysmart.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-header, footer {
+header {
     background-color: #1e40af;
-    background-image: url(studysmart.jpg);
-    background-size: cover;
-    background-position: center;
     color: white;
     padding: 2rem;
     text-align: center;
+}
+
+nav {
+    background-color: #1e40af;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
 }
 
 nav ul {
@@ -24,9 +32,11 @@ nav ul {
     padding: 0;
 }
 
-nav a {
+nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .container {
@@ -42,4 +52,20 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+.main-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)
+}
+
+footer {
+    color: #000;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
 }
