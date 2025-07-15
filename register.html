@@ -7,6 +7,26 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
 
+    <script>
+        const form = document.querySelector("form");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("password");
+
+        form.addEventListener("submit", function (e) {
+            if (password.value !== confirmPassword.value){
+                e.preventDefault();
+                alert("Passwords do not match.");
+                return;
+            }
+
+            if (password.value.length < 8 || !/\d/.test(password.value))  {
+                e.preventDefault();
+                alert("Password must be at least 8 characters long and contain a number.");
+                return;
+            }
+        });
+    </script>
+
     <body class="min-h-screen flex items-center justify-center bg-gray-100">
         <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
@@ -19,6 +39,11 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Password</label>
                     <input type="password" name="password" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
                 </div>
 
                 <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Register</button>
